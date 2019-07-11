@@ -22,11 +22,11 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 
 install:
-  - sudo pip install ansible==2.2.2 > /dev/null 2>&1
+  - sudo pip install ansible==2.4.6.0 > /dev/null 2>&1
 
 script:
   - cd tests
-  - docker-compose up -d > /dev/null 2>&1
+  - docker-compose up -d
   - ansible-playbook user.yml -l centos
   - ansible-playbook user.yml -l debian
   - ansible-playbook user.yml -l ubuntu
